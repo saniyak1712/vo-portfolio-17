@@ -57,7 +57,7 @@ const projects: Project[] = [
     description: "Collaborative task management application with real-time updates.",
     longDescription:
       "A collaborative task management application that helps teams organize and track their work efficiently. Built with React and Firebase, it features real-time synchronization, drag-and-drop functionality, team collaboration tools, and detailed analytics. The app supports multiple project views including Kanban boards and calendar views.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "image.pngheight=300&width=500",
     technologies: ["React", "Firebase", "Material-UI", "Redux"],
     features: [
       "Real-time collaboration and updates",
@@ -67,8 +67,8 @@ const projects: Project[] = [
       "Progress tracking and analytics",
       "Mobile-responsive design",
     ],
-    demoUrl: "https://taskmanager-demo.com",
-    githubUrl: "https://github.com/saniyakhandelwal/taskmanager",
+    demoUrl: "https://saniyak1712.github.io/coffee-shop/",
+    githubUrl: "https://saniyak1712.github.io/coffee-shop/",
     category: "Web Application",
   },
   {

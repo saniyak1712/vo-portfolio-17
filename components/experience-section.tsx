@@ -8,7 +8,7 @@ const experiences = [
     title: "MERN Stack Developer Intern",
     company: "Linux World Informatics Pvt Ltd",
     location: "Jaipur, Rajasthan",
-    period: "16 June 2024 - 31 July 2024",
+    period: "16 June 2025 - 31 July 2025",
     type: "Current Internship",
     status: "ongoing",
     responsibilities: [

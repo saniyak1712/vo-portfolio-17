@@ -242,13 +242,13 @@ export function HeroSection({ setActiveSection, scrollY, isDarkMode, userPhoto }
           {[
             {
               icon: Github,
-              href: "https://github.com/saniyakhandelwal",
+              href: "https://github.com/saniyak1712",
               color: "from-gray-600 to-gray-800",
               label: "GitHub",
             },
             {
               icon: Linkedin,
-              href: "https://linkedin.com/in/saniya-khandelwal",
+              href: "https://www.linkedin.com/in/saniya-khandelwal-26127b295/",
               color: "from-blue-600 to-blue-800",
               label: "LinkedIn",
             },
