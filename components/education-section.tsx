@@ -10,7 +10,7 @@ const educationData = [
     institution: "Jaipur Engineering College and Research Centre",
     grade: "CGPA: 8.99",
     description:
-      "Currently in final year, focusing on advanced web technologies, software engineering, and computer science fundamentals.",
+      "Currently in pre-final year, focusing on advanced web technologies, software engineering, and computer science fundamentals.",
     location: "Jaipur, Rajasthan",
   },
   {
