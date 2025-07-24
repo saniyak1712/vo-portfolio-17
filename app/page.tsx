@@ -16,12 +16,10 @@ import { FloatingElements } from "@/components/floating-elements"
 import { ProjectModal } from "@/components/project-modal"
 import { CertificateModal } from "@/components/certificate-modal"
 import { CustomCursor } from "@/components/custom-cursor"
-import { ThreeBackground } from "@/components/three-background"
 import { SoundEffects } from "@/components/sound-effects"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { ParticleSystem } from "@/components/particle-system"
 import { LoadingTransitions } from "@/components/loading-transitions"
-import { PhotoUpload } from "@/components/photo-upload"
 
 export type Section =
   | "home"
@@ -65,10 +63,9 @@ export default function Portfolio() {
   const [isLoading, setIsLoading] = useState(true)
   const [scrollY, setScrollY] = useState(0)
   const [isDarkMode, setIsDarkMode] = useState(true)
-  const [userPhoto, setUserPhoto] = useState<string | null>(null)
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 3000)
+    const timer = setTimeout(() => setIsLoading(false), 2000)
     return () => clearTimeout(timer)
   }, [])
 
@@ -117,13 +114,11 @@ export default function Portfolio() {
     >
       <CustomCursor isDarkMode={isDarkMode} />
       <SoundEffects />
-      <ThreeBackground isDarkMode={isDarkMode} />
       <ParticleSystem isDarkMode={isDarkMode} />
       <FloatingElements scrollY={scrollY} isDarkMode={isDarkMode} />
       <LoadingTransitions />
 
       <ThemeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-      <PhotoUpload userPhoto={userPhoto} setUserPhoto={setUserPhoto} />
 
       <Header activeSection={activeSection} setActiveSection={setActiveSection} isDarkMode={isDarkMode} />
 
@@ -137,12 +132,7 @@ export default function Portfolio() {
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              <HeroSection
-                setActiveSection={setActiveSection}
-                scrollY={scrollY}
-                isDarkMode={isDarkMode}
-                userPhoto={userPhoto}
-              />
+              <HeroSection setActiveSection={setActiveSection} scrollY={scrollY} isDarkMode={isDarkMode} />
             </motion.div>
           )}
 

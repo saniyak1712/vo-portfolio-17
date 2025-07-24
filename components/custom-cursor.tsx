@@ -3,7 +3,11 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
-export function CustomCursor() {
+interface CustomCursorProps {
+  isDarkMode: boolean
+}
+
+export function CustomCursor({ isDarkMode }: CustomCursorProps) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
 

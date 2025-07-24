@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Download, Github, Linkedin, Mail, Sparkles, Code, Palette } from "lucide-react"
+import { ArrowRight, Download, Github, Linkedin, Mail, Sparkles, Code, Palette, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { TypingAnimation } from "@/components/typing-animation"
 import type { Section } from "@/app/page"
@@ -10,10 +10,9 @@ interface HeroSectionProps {
   setActiveSection: (section: Section) => void
   scrollY: number
   isDarkMode: boolean
-  userPhoto: string | null
 }
 
-export function HeroSection({ setActiveSection, scrollY, isDarkMode, userPhoto }: HeroSectionProps) {
+export function HeroSection({ setActiveSection, scrollY, isDarkMode }: HeroSectionProps) {
   return (
     <section className="min-h-screen flex items-center justify-center px-4 pt-20 relative overflow-hidden">
       {/* Parallax Background Elements */}
@@ -57,58 +56,88 @@ export function HeroSection({ setActiveSection, scrollY, isDarkMode, userPhoto }
       </div>
 
       <div className="container mx-auto text-center relative z-10">
-        {/* Enhanced Avatar with Photo */}
+        {/* Enhanced Avatar with Static Photo - Made Bigger and More Attractive */}
         <motion.div
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ type: "spring", bounce: 0.6, duration: 1.2 }}
-          className="relative w-48 h-48 mx-auto mb-8"
+          className="relative w-72 h-72 mx-auto mb-8"
         >
-          {/* Outer glow ring */}
+          {/* Outer animated ring */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-            className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 p-1"
+            className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 via-blue-500 to-emerald-500 p-2"
           >
             <div
               className={`w-full h-full rounded-full ${isDarkMode ? "bg-gradient-to-br from-gray-900 via-black to-gray-800" : "bg-gradient-to-br from-white via-blue-50 to-purple-50"}`}
             />
           </motion.div>
 
-          {/* Photo container */}
+          {/* Middle decorative ring */}
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+            className="absolute inset-4 rounded-full bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 p-1 opacity-80"
+          >
+            <div
+              className={`w-full h-full rounded-full ${isDarkMode ? "bg-gradient-to-br from-gray-800 via-black to-gray-900" : "bg-gradient-to-br from-blue-50 via-white to-purple-50"}`}
+            />
+          </motion.div>
+
+          {/* Photo container with enhanced styling */}
           <motion.div
             animate={{
               boxShadow: [
-                "0 0 30px rgba(168, 85, 247, 0.4)",
-                "0 0 60px rgba(236, 72, 153, 0.6)",
-                "0 0 30px rgba(168, 85, 247, 0.4)",
+                "0 0 40px rgba(168, 85, 247, 0.6)",
+                "0 0 80px rgba(236, 72, 153, 0.8)",
+                "0 0 40px rgba(168, 85, 247, 0.6)",
               ],
             }}
-            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            className="absolute inset-3 rounded-full overflow-hidden bg-gradient-to-r from-purple-500 to-pink-500 p-1"
+            transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
+            className="absolute inset-6 rounded-full overflow-hidden bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 p-2"
           >
-            <div className={`w-full h-full rounded-full overflow-hidden ${isDarkMode ? "bg-gray-800" : "bg-gray-100"}`}>
-              {userPhoto ? (
-                <img
-                  src={userPhoto || "/placeholder.svg"}
-                  alt="Saniya Khandelwal"
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center text-6xl">👩‍💻</div>
-              )}
+            <div
+              className={`w-full h-full rounded-full overflow-hidden ${isDarkMode ? "bg-gray-800" : "bg-gray-100"} relative`}
+            >
+              <img src="/images/saniya-profile.png" alt="Saniya Khandelwal" className="w-full h-full object-cover" />
+              {/* Overlay gradient for better integration */}
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-pink-500/20 rounded-full" />
             </div>
           </motion.div>
 
-          {/* Floating icons around avatar */}
+          {/* Floating icons around avatar - More and Better Positioned */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
             className="absolute inset-0"
           >
-            <Code className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-8 h-8 text-purple-400" />
-            <Palette className="absolute top-1/2 -right-3 transform -translate-y-1/2 w-8 h-8 text-pink-400" />
-            <Sparkles className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-8 h-8 text-blue-400" />
+            <Code className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 text-purple-400 drop-shadow-lg" />
+            <Palette className="absolute top-1/2 -right-6 transform -translate-y-1/2 w-12 h-12 text-pink-400 drop-shadow-lg" />
+            <Sparkles className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-12 h-12 text-blue-400 drop-shadow-lg" />
+            <Star className="absolute top-1/2 -left-6 transform -translate-y-1/2 w-10 h-10 text-yellow-400 drop-shadow-lg" />
+          </motion.div>
+
+          {/* Additional decorative elements */}
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 25, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+            className="absolute inset-0"
+          >
+            <div className="absolute top-12 right-12 w-4 h-4 bg-emerald-400 rounded-full animate-pulse" />
+            <div className="absolute bottom-12 left-12 w-4 h-4 bg-cyan-400 rounded-full animate-pulse" />
+            <div className="absolute top-12 left-12 w-3 h-3 bg-yellow-400 rounded-full animate-pulse" />
+            <div className="absolute bottom-12 right-12 w-3 h-3 bg-red-400 rounded-full animate-pulse" />
+          </motion.div>
+
+          {/* Professional badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.5, duration: 0.5 }}
+            className="absolute -bottom-4 -right-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
+          >
+            Available for Hire
           </motion.div>
         </motion.div>
 
